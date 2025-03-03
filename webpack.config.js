@@ -39,7 +39,7 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         template: "./public/index.html",
       }),
-      ...(isProduction ? [] : [new Dotenv()]), // ❌ No usar Dotenv en producción
+      ...(isProduction ? [] : [new Dotenv()]),
       new webpack.DefinePlugin({
         "process.env.APP_ENV": JSON.stringify(isProduction ? "production" : "development"),
       }),
